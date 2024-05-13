@@ -580,7 +580,7 @@ function testCode() {
   var codeStr = document.getElementById('codeField').value;
 
   //Convert from Awatalk
-  var commandsStrs = codeStr.split(" ");
+  var commandsStrs = codeStr.trim().split(/(\s+)|((?<=a)(?=a))/gi);
   commandsList = [];
   for (i = 0; i < commandsStrs.length; i++) {
     commandsList.push(parseInt(commandsStrs[i]));
